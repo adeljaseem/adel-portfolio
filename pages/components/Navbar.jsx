@@ -30,7 +30,7 @@ export const Navbar = () => {
   return (
     <div className={shadow ? 'fixed w-full h-20 shadow-xl z-[100] bg-[#ecf0f3]' : 'fixed w-full h-20 z-[100] bg-[#ecf0f3]'}>
         <div className='flex justify-between items-center w-full h-full px-2 2xl:px-16'>
-            <Link to="home" spy={true} smooth={true} offset={-100} duration={500}>
+            <Link href='' to="home" spy={true} smooth={true} offset={-100} duration={500}>
                 <Image className='hover:scale-105 duration-200 cursor-pointer mt-4 w-40' src={logo} alt='/' />
             </Link>
             <div>
