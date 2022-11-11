@@ -38,9 +38,9 @@ const Main = () => {
             <div className="rounded-full shadow-lg shadow-gray-400 p-6 cursor-pointer hover:scale-110 ease-in duration-300">
               <Link href='https://github.com/adeljaseem' target="blank"><FaGithub className="text-[#90185c]" /></Link>
             </div>
-            <div className="rounded-full shadow-lg shadow-gray-400 p-6 cursor-pointer hover:scale-110 ease-in duration-300">
+            {/* <div className="rounded-full shadow-lg shadow-gray-400 p-6 cursor-pointer hover:scale-110 ease-in duration-300">
               <AiOutlineMail className="text-[#90185c]" />
-            </div>
+            </div> */}
             <div className="rounded-full shadow-lg shadow-gray-400 p-6 cursor-pointer hover:scale-110 ease-in duration-300">
               <Link href='https://www.instagram.com/adilljaseem' target='_blank'><FaInstagram className="text-[#90185c]" /></Link>
             </div>

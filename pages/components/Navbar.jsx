@@ -108,9 +108,9 @@ export const Navbar = () => {
                             <div className='rounded-full shadow-lg shadow-gray-400 p-3 cursor-pointer hover:scale-110 ease-in duration-300'>
                                 <a href='https://github.com/adeljaseem' target='blank'><FaGithub className='text-[#90185c]'/></a>
                             </div>
-                            <div className='rounded-full shadow-lg shadow-gray-400 p-3 cursor-pointer hover:scale-110 ease-in duration-300'>
+                            {/* <div className='rounded-full shadow-lg shadow-gray-400 p-3 cursor-pointer hover:scale-110 ease-in duration-300'>
                                <a href='' target='_blank'><AiOutlineMail className='text-[#90185c]'/></a>
-                            </div>
+                            </div> */}
                             <div className='rounded-full shadow-lg shadow-gray-400 p-3 cursor-pointer hover:scale-110 ease-in duration-300'>
                                 <a href='https://www.instagram.com/adilljaseem' target='blank'><FaInstagram className='text-[#90185c]'/></a>
                             </div>

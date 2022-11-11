@@ -1,26 +1,39 @@
 import Link from "next/link";
-import React, {useRef} from "react";
+import React, { useRef } from "react";
 import { AiOutlineMail } from "react-icons/ai";
 import { FaGithub, FaInstagram, FaLinkedinIn } from "react-icons/fa";
-import { HiOutlineChevronDoubleUp } from "react-icons/hi";
-import emailjs from '@emailjs/browser';
+import {
+  HiLocationMarker,
+  HiMail,
+  HiOutlineChevronDoubleUp,
+  HiPhone,
+} from "react-icons/hi";
+import emailjs from "@emailjs/browser";
 
 const Contact = () => {
+  const form = useRef();
+  const sendEmail = (e) => {
+    e.preventDefault();
 
-    const form = useRef()
-    const sendEmail = (e) => {
-        e.preventDefault();
-    
-        emailjs.sendForm('service_d4ngv0h', 'template_0cvm7xm', form.current, 'zuGwnHelKQqZ85lu0')
-          .then((result) => {
-              console.log(result.text);
-              alert("Message Sent!")
-          }, (error) => {
-              console.log(error.text);
-              alert("Failed!!")
-          });
-          e.target.reset()
-      };
+    emailjs
+      .sendForm(
+        "service_d4ngv0h",
+        "template_0cvm7xm",
+        form.current,
+        "zuGwnHelKQqZ85lu0"
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+          alert("Message Sent!");
+        },
+        (error) => {
+          console.log(error.text);
+          alert("Failed!!");
+        }
+      );
+    e.target.reset();
+  };
 
   return (
     <div id="contact" className="w-full">
@@ -46,6 +59,22 @@ const Contact = () => {
                 <p className="py-4">
                   Available for full-time positions. Contact me.
                 </p>
+                <hr />
+                <div className="py-2">
+                  <div className="flex justify-center">
+                    <HiLocationMarker size={20} className="text-[#90185c]" />
+                    <p className="px-2">Kochi, Kerala, India</p>
+                  </div>
+                  <div className="flex justify-center">
+                    <HiPhone size={20} className="text-[#90185c]" />
+                    <p className="px-2">+916238933779</p>
+                  </div>
+                  <div className="flex justify-center">
+                    <HiMail size={20} className="text-[#90185c]" />
+                    <p className="px-2">adiljaseem.2000@gmail.com</p>
+                  </div>
+                </div>
+                <hr />
               </div>
               <div>
                 <h5 className="uppercase pt-5 text-[#90185c] ">
@@ -68,9 +97,9 @@ const Contact = () => {
                       <FaInstagram className="text-[#90185c]" />
                     </Link>
                   </div>
-                  <div className="rounded-full shadow-lg shadow-gray-400 p-5 cursor-pointer hover:scale-110 ease-in duration-300">
+                  {/* <div className="rounded-full shadow-lg shadow-gray-400 p-5 cursor-pointer hover:scale-110 ease-in duration-300">
                     <AiOutlineMail className="text-[#90185c]" />
-                  </div>
+                  </div> */}
                   <div className="rounded-full shadow-lg shadow-gray-400 p-5 cursor-pointer hover:scale-110 ease-in duration-300">
                     <Link href="https://github.com/adeljaseem" target="_blank">
                       <FaGithub className="text-[#90185c]" />
@@ -95,26 +124,16 @@ const Contact = () => {
                     ></input>
                   </div>
                   <div className="flex flex-col py-2">
-                  <label className="uppercase text-sm py-2">Email</label>
-                  <input
-                    className="border-2 rounded-lg p-3 flex border-gray-300"
-                    name="user_email"
-                    type="email"
-                    required
-                  />
-                </div>
-                  {/* <div className="flex flex-col">
-                    <label className="uppercase text-sm py-2">
-                      Phone Number
-                    </label>
+                    <label className="uppercase text-sm py-2">Email</label>
                     <input
                       className="border-2 rounded-lg p-3 flex border-gray-300"
-                      name="number"
-                      type="text"
+                      name="user_email"
+                      type="email"
+                      required
                     />
-                  </div> */}
+                  </div>
                 </div>
-                
+
                 <div className="flex flex-col py-2">
                   <label className="uppercase text-sm py-2">Subject</label>
                   <input
@@ -133,7 +152,12 @@ const Contact = () => {
                     required
                   ></textarea>
                 </div>
-                <button type="submit" className="w-full p-4 bg-[#90185c] text-gray-100 mt-4">Send Message</button>
+                <button
+                  type="submit"
+                  className="w-full p-4 bg-[#90185c] text-gray-100 mt-4"
+                >
+                  Send Message
+                </button>
               </form>
             </div>
           </div>
@@ -146,6 +170,11 @@ const Contact = () => {
           </Link>
         </div>
       </div>
+
+      <footer className="text-center">
+        <hr />
+        <p className="py-8 font-thin">&copy; Copyright 2022 | adel-portfolio</p>
+      </footer>
     </div>
   );
 };
