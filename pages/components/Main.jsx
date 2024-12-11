@@ -24,10 +24,7 @@ const Main = () => {
             />
           </div>
           <p className="py-4 text-gray-600 max-w-[70%] m-auto">
-            I'm a front-end web developer specializing in building and designing
-            exceptional digital experiences. Currently, I'm focused on building
-            responsive front-end web applications while learning back-end
-            technologies.
+          I'm a full-stack web developer with expertise in both front-end and back-end technologies. I build and design exceptional digital experiences, focusing on responsive web applications and leveraging my skills in frameworks like React.js, Node.js, and GraphQL.
           </p>
           <div className=" flex items-center justify-between max-w-[330px] m-auto py-4">
             <div className="rounded-full shadow-lg shadow-gray-400 p-6 cursor-pointer hover:scale-110 ease-in duration-300">
@@ -42,7 +39,7 @@ const Main = () => {
               <AiOutlineMail className="text-[#90185c]" />
             </div> */}
             <div className="rounded-full shadow-lg shadow-gray-400 p-6 cursor-pointer hover:scale-110 ease-in duration-300">
-              <Link href='https://www.instagram.com/adilljaseem' target='_blank'><FaInstagram className="text-[#90185c]" /></Link>
+              <Link href='https://www.instagram.com/adelljaseem' target='_blank'><FaInstagram className="text-[#90185c]" /></Link>
             </div>
           </div>
         </div>

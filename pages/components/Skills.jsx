@@ -9,6 +9,10 @@ import nextjs from '../assets/skills/nextjs.png'
 import node from '../assets/skills/node.png'
 import reactimg from '../assets/skills/react.png'
 import tailwind from '../assets/skills/tailwind.png'
+import materialui from '../assets/skills/materialui.png'
+import graphql from '../assets/skills/graphql.png'
+import openai from '../assets/skills/openai.png'
+import geminiai from '../assets/skills/geminiai.png'
 
 const Skills = () => {
   return (
@@ -61,6 +65,16 @@ const Skills = () => {
                 <div className='p-6 shadow-xl rounded-xl hover:scale-105 ease-in duration-300'>
                     <div className='grid grid-cols-2 gap-4 justify-center items-center'>
                         <div className='m-auto'>
+                            <Image src={materialui} width='64' height='64' alt='/'/>
+                        </div>
+                        <div className='flex flex-col items-center justify-center'>
+                            <h3>Material UI</h3>
+                        </div>
+                    </div>
+                </div>
+                <div className='p-6 shadow-xl rounded-xl hover:scale-105 ease-in duration-300'>
+                    <div className='grid grid-cols-2 gap-4 justify-center items-center'>
+                        <div className='m-auto'>
                             <Image src={reactimg} width='64' height='64' alt='/'/>
                         </div>
                         <div className='flex flex-col items-center justify-center'>
@@ -93,10 +107,30 @@ const Skills = () => {
                 <div className='p-6 shadow-xl rounded-xl hover:scale-105 ease-in duration-300'>
                     <div className='grid grid-cols-2 gap-4 justify-center items-center'>
                         <div className='m-auto'>
-                            <Image src={git} width='64' height='64' alt='/'/>
+                            <Image src={graphql} width='64' height='64' alt='/'/>
                         </div>
                         <div className='flex flex-col items-center justify-center'>
-                            <h3>Github</h3>
+                            <h3>GraphQL</h3>
+                        </div>
+                    </div>
+                </div>
+                <div className='p-6 shadow-xl rounded-xl hover:scale-105 ease-in duration-300'>
+                    <div className='grid grid-cols-2 gap-4 justify-center items-center'>
+                        <div className='m-auto'>
+                            <Image src={openai} width='64' height='64' alt='/'/>
+                        </div>
+                        <div className='flex flex-col items-center justify-center'>
+                            <h3>Open AI</h3>
+                        </div>
+                    </div>
+                </div>
+                <div className='p-6 shadow-xl rounded-xl hover:scale-105 ease-in duration-300'>
+                    <div className='grid grid-cols-2 gap-4 justify-center items-center'>
+                        <div className='m-auto'>
+                            <Image src={geminiai} width='64' height='64' alt='/'/>
+                        </div>
+                        <div className='flex flex-col items-center justify-center'>
+                            <h3>Gemini AI</h3>
                         </div>
                     </div>
                 </div>
@@ -110,7 +144,16 @@ const Skills = () => {
                         </div>
                     </div>
                 </div>
-
+                <div className='p-6 shadow-xl rounded-xl hover:scale-105 ease-in duration-300'>
+                    <div className='grid grid-cols-2 gap-4 justify-center items-center'>
+                        <div className='m-auto'>
+                            <Image src={git} width='64' height='64' alt='/'/>
+                        </div>
+                        <div className='flex flex-col items-center justify-center'>
+                            <h3>Github</h3>
+                        </div>
+                    </div>
+                </div>
             </div>
 
         </div>

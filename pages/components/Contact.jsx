@@ -91,7 +91,7 @@ const Contact = () => {
                   </div>
                   <div className="rounded-full shadow-lg shadow-gray-400 p-5 cursor-pointer hover:scale-110 ease-in duration-300">
                     <Link
-                      href="https://www.instagram.com/adilljaseem"
+                      href="https://www.instagram.com/adelljaseem"
                       target="_blank"
                     >
                       <FaInstagram className="text-[#90185c]" />
