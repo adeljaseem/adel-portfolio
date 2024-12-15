@@ -1,5 +1,7 @@
 import React from 'react';
 import { Link } from 'react-scroll';
+import me2 from "../assets/me2.jpg"
+import Image from 'next/image';
 
 const About = () => {
   return (
@@ -26,7 +28,8 @@ const About = () => {
         </div>
         <div className='p-20'>
           <div className='w-full h-auto m-auto shadow-xl shadow-gray-400 rounded-xl flex items-center justify-center hover:scale-105 ease-in duration-300'>
-            <img className='rounded-xl' src='https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8d2Vic2l0ZXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=700&q=60' alt='/' />          </div>
+            <Image className='rounded-xl' src={me2} alt='/' />
+          </div>
         </div>
       </div>
     </div>

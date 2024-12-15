@@ -18,7 +18,7 @@ const Main = () => {
           </h1>
           <div className="flex justify-center items-center w-[240px] h-auto m-auto">
             <Image
-              className="rounded-full shadow-lg shadow-gray-400"
+              className="rounded-full shadow-lg shadow-gray-400 hover:scale-110 ease-in duration-300"
               src={me}
               alt="/"
             />
