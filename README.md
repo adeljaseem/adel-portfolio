@@ -1,187 +1,57 @@
-# Adil Jaseem - Professional Portfolio V4
+# Adil Jaseem Portfolio
 
-A modern Next.js portfolio presenting Adil Jaseem as a **Full Stack Software Engineer working across AI platforms, distributed systems, real-time products, and LLM infrastructure**.
+The site now opens with a simple plain portfolio. The 3D city is still available from the header and from the city preview in the first section.
 
-This revision replaces the earlier signal-service-heavy positioning with the complete QuantiFore contribution story: the full frontend, core SML workflow and services, entity and real-time services, signal intelligence, local model infrastructure, environment orchestration, observability, and Git workflows.
+## Main flow
 
-## What changed in V4
+1. Visitors land on the plain portfolio.
+2. The first section gives a small preview of the city.
+3. The 3D city button opens the walkable view.
+4. Each building opens its portfolio section inside the city.
+5. The Plain portfolio button returns to the regular page.
 
-- Simplified typography using **Inter** for all primary text and **IBM Plex Mono** only for technical metadata.
-- Added a custom React Bits-inspired rotating hero headline with word-level blur, depth, and reduced-motion support.
-- Added pointer-driven 3D tilt, scroll parallax, animated network visuals, architecture pulses, project system diagrams, and restrained ambient motion.
-- Rewrote About, Experience, Architecture, Projects, and Skills around verified end-to-end ownership.
-- Presents Signal Scraper and Signal Scheduler as the **latest major contribution inside QuantiFore**, not as a separate professional identity.
-- Adds focused QuantiFore case studies for:
-  - Full platform engineering
-  - Core Stock or Model Lookup workflow
-  - Evidence-backed signal intelligence
-  - Multi-environment platform operations
-- Adds four project-image slots to the primary QuantiFore case study and additional slots to the focused case studies.
-- Includes an updated ATS-friendly résumé in both PDF and DOCX formats.
-- Includes ready-to-copy LinkedIn, CV, and ownership-reference documents in `career/`.
+## Copy and profile update
 
-## Positioning used by the portfolio
+The plain portfolio now presents Adil as a Full Stack Developer based in Trivandrum. The introduction and About section place React at the centre of the front-end work and Python at the centre of the back-end work. The About section stays personal and does not describe the current employer.
 
-**Full Stack Software Engineer - AI Platforms & Distributed Systems**
+## 3D city interface
 
-The contribution hierarchy is intentionally explicit:
+The city uses the same warm white theme as the plain portfolio. The entry card, city title, control hints, hover labels, pause dialog, fallback notice, section panels, and building signs now use white surfaces, soft borders, dark text, and the purple accent from the main site.
 
-### Built directly
+## Pointer lock handling
 
-- Complete QuantiFore React and TypeScript frontend
-- SML Coordinator Service
-- SML Orchestrator Service
-- Query Parser Service
-- Entity Resolution Service
-- WebSocket Gateway Service
-- Signal Scraper Service
-- Signal Scheduler Service
-- Local llama.cpp, Ollama, and MLX integration
-- Docker Compose development, staging, and production workflows
-- Bootstrap automation
-- Grafana, Loki, and Grafana Alloy observability
-- Git branching, repository, integration, and release workflows
+The city no longer uses the Three.js PointerLockControls helper. It uses a small, local first-person controller and requests pointer lock only from an explicit button press.
 
-### Integrated, extended, debugged, or supported
+The city waits briefly after pointer lock is released before it allows another request. It checks whether the browser exposes the Pointer Lock API, then treats the real browser request as the source of truth. A temporary failure no longer disables walking for the rest of the session, and there is no short timeout while a browser prompt may still be open. When the API is genuinely unavailable, the same city opens in a static browse view, so each building can still be selected.
 
-- ETL, CFRI, and ATI workflows
-- Blueprint, dashboard, simulation, authentication, gateway, CDC, relational, graph, time-series, and cache services
+## Spendwise update
 
-See [`career/OWNERSHIP_REFERENCE.md`](career/OWNERSHIP_REFERENCE.md) before making future content changes.
+Spendwise is included in the Projects section. The entry covers the Capacitor Android integration and the native Java flow for new bank debit SMS capture. It also mentions the review inbox, optional automatic entry, local parsing, and raw message privacy.
 
-## Technology stack
+## Stack
 
-- Next.js 16 App Router
-- React 19
-- TypeScript
-- Tailwind CSS 4
-- Motion
-- Lucide React
-- React Icons for brand marks
-- Native Canvas 2D network animation
-- Server-side contact endpoint with optional Resend delivery
+* Next.js 16
+* React 19
+* TypeScript
+* Tailwind CSS 4
+* React Three Fiber
+* Drei
+* Framer Motion
+* GSAP
+* EmailJS
 
 ## Run locally
 
-The repository pins Node 24 through `.nvmrc`.
-
 ```bash
-nvm install
-nvm use
 npm install
-cp .env.example .env.local
 npm run dev
 ```
 
-Open `http://localhost:3000`.
-
-Before deployment, run:
+## Checks
 
 ```bash
-npm run check
+npm run lint
+npm run build
 ```
 
-## Environment variables
-
-```dotenv
-NEXT_PUBLIC_SITE_URL=https://your-domain.com
-NEXT_PUBLIC_WHATSAPP_NUMBER=916238933779
-
-# Optional server-side contact delivery
-RESEND_API_KEY=re_replace_me
-CONTACT_TO_EMAIL=your-email@example.com
-CONTACT_FROM_EMAIL=Portfolio <hello@your-verified-domain.com>
-```
-
-The portfolio still works without the Resend variables. Visitors can use direct email, LinkedIn, GitHub, or WhatsApp.
-
-## Résumé files
-
-The embedded `/resume` route uses:
-
-```text
-public/resume/adil-jaseem-resume.pdf
-public/resume/adil-jaseem-resume.docx
-```
-
-The page provides browser viewing, PDF download, and editable DOCX download. Replace either file while keeping the same filename to update it without changing React code.
-
-## Add QuantiFore screenshots
-
-Place sanitized WebP or AVIF images in:
-
-```text
-public/projects/
-```
-
-Then add the image path to the matching media entry in `lib/portfolio-data.ts`:
-
-```ts
-{
-  label: "Simulation workspace",
-  description: "Causal graph, scenario controls, and timeline.",
-  alt: "QuantiFore simulation workspace",
-  src: "/projects/quantifore-simulation.webp",
-}
-```
-
-Until `src` is supplied, the portfolio renders a polished animated placeholder.
-
-Recommended primary screenshots:
-
-```text
-quantifore-dashboard.webp
-quantifore-monitoring.webp
-quantifore-simulation.webp
-quantifore-signals.webp
-```
-
-Remove customer names, private IP addresses, internal URLs, credentials, proprietary prompts, private datasets, and confidential diagrams before publishing.
-
-## Main content files
-
-- `lib/site.ts` - personal, contact, social, and résumé settings
-- `lib/portfolio-data.ts` - experience, skills, projects, case studies, ownership, and image slots
-- `components/rotating-role.tsx` - animated hero role phrases
-- `components/hero-section.tsx` - parallax hero and 3D tilt interaction
-- `components/architecture-section.tsx` - interactive contribution map
-- `components/project-visual.tsx` - animated project-specific system visuals
-- `career/LINKEDIN_PROFILE_UPDATE.md` - LinkedIn headline, About, Experience, Projects, Featured, and Skills copy
-- `career/CV_MASTER_CONTENT.md` - editable master résumé content
-- `career/OWNERSHIP_REFERENCE.md` - wording boundaries for built versus integrated work
-
-## Routes
-
-- `/` - complete portfolio
-- `/resume` - embedded résumé and downloads
-- `/work/quantifore-platform`
-- `/work/quantifore-sml-workflow`
-- `/work/quantifore-signal-intelligence`
-- `/work/quantifore-platform-operations`
-- `/work/newsraven`
-- `/work/earlier-product-experience`
-- `/api/contact` - optional server-side contact delivery
-
-## Contact options
-
-The project uses four complementary contact paths:
-
-- Direct WhatsApp conversation link
-- Direct email link
-- LinkedIn
-- Server-side contact form through Resend when configured
-
-No email provider credential is exposed to the browser.
-
-## Quality and accessibility
-
-- Semantic landmarks and heading hierarchy
-- Keyboard-operable navigation and controls
-- Visible focus states
-- Mobile navigation with Escape support and body locking
-- `prefers-reduced-motion` handling across CSS, Motion, and Canvas
-- Secure response headers
-- Metadata, Open Graph image, JSON-LD, sitemap, robots, and web manifest
-- Print-ready and downloadable résumé assets
-
-See [`VALIDATION.md`](VALIDATION.md) for the completed checks and the remaining dependency-backed check to run after installation.
+Add the existing resume file at `public/resume.pdf`, and set the EmailJS values from `.env.example` before deployment.
