@@ -1,6 +1,6 @@
 # Adil Jaseem Portfolio
 
-The site now opens with a simple plain portfolio. The 3D city is still available from the header and from the city preview in the first section.
+The site now opens with a simple plain portfolio. A 3D city view is also available from the header and from the city preview in the first section.
 
 ## Main flow
 
